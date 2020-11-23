@@ -22,4 +22,19 @@
 Проверить, чтобы все работало без ошибок в консоли */
 
 'use strict';
-
+    let numberOfFilms;
+    numberOfFilms=+prompt('Сколько фильмов вы уже посмотрели?','');
+    let personalMovieDB = {
+        count:numberOfFilms,
+        movies:{},
+        actors:{},
+        genres:[],
+        private:false
+    }; 
+    for(let i=0; i<=1;i++){
+        let answer=prompt('Один из последних просмотренных фильмов?');
+        let answer2=prompt('На сколько оцените его?')
+        personalMovieDB.movies[answer]=answer2;
+    };
+        console.log(personalMovieDB);
+    
