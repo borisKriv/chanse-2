@@ -23,4 +23,27 @@ const movieDB = {
         "Скотт Пилигрим против..."
     ]
 };
+const reklama = document.querySelectorAll(".promo__adv > *");
+const ganre = document.querySelector(".promo__genre");
+const bcg = document.querySelector('.promo__bg');
+//const moviesOnPage = document.querySelectorAll('.promo__interactive-item');
+//let arr=movieDB.movies;
+const movieList = document.querySelector(".promo__interactive-list")
 
+
+reklama.forEach(function(item,i,arr){
+    item.remove();
+});
+ganre.textContent="Драма";
+bcg.style.backgroundImage="url('img/bg.jpg')";
+//arr.sort;
+//moviesOnPage.forEach(function(element,i){
+ //   element.textContent=`${i+1} ${arr[i]}`;
+//});
+movieDB.movies.sort();
+movieList.innerHTML="";
+movieDB.movies.forEach(function(item,i){
+    movieList.insertAdjacentHTML("beforeend", ` <li class="promo__interactive-item">${i+1} ${item}
+                            <div class="delete"></div>
+                        </li>`)
+});
